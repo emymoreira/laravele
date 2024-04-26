@@ -163,32 +163,29 @@
 
 <script>
   document.getElementById('form-contato').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita o envio do formulário
+    event.preventDefault();
 
-    // Validar campos aqui
+      
     var nome = document.getElementById('nome').value.trim();
     var telefone = document.getElementById('telefone').value.trim();
     var email = document.getElementById('email').value.trim();
     var mensagem = document.getElementById('mensagem').value.trim();
 
-    // Exemplo de validação simples de campo vazio
+
     if (nome === '' || telefone === '' || email === '' || mensagem === '') {
       alert('Por favor, preencha todos os campos.');
-      return; // Impede o envio do formulário se houver campos vazios
+      return;
     }
 
-    // Validar formato de e-mail
     if (!isValidEmail(email)) {
       alert('Por favor, insira um e-mail válido.');
-      return; // Impede o envio do formulário se o e-mail for inválido
+      return;
     }
 
-    // Envio do formulário
-    // Aqui você pode enviar os dados do formulário para o backend usando Ajax ou outra técnica de sua preferência
-    // Por exemplo: fetch('URL_DO_BACKEND', { method: 'POST', body: new FormData(this) })
+
   });
 
-  // Função para validar o formato de e-mail
+
   function isValidEmail(email) {
     var re = /\S+@\S+\.\S+/;
     return re.test(email);
