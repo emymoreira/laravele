@@ -45,6 +45,7 @@ Route::get('/contato', function () {
 });
 
 
+
 echo '<a href="/paginainicial">Página Inicial</a>';
 
 
